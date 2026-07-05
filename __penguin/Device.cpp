@@ -6,9 +6,22 @@
 #include <cstdint>
 
 Device::Device(std::unique_ptr<Transport> transport) :
-	m_transport(std::move(transport))
+	m_transport(std::move(transport)),
+    m_running(false)
 {
     setOrientaion(Orientation::VERTICAL);
+}
+
+Device::~Device()
+{
+    m_transport->send(DeviceCommand::Packets::Cmd::TurnOff);
+
+    m_running = false;
+
+    if (m_thread.joinable())
+    {
+        m_thread.join();
+    }
 }
 
 void Device::setOrientaion(Orientation orientation)
@@ -17,7 +30,7 @@ void Device::setOrientaion(Orientation orientation)
 
     if (m_orientation == Orientation::VERTICAL)
     {
-        m_resolution = {320, 480};
+        m_resolution = { 320, 480 };
     }
     else
     {
@@ -25,12 +38,11 @@ void Device::setOrientaion(Orientation orientation)
     }
 }
 
-void Device::run()
+bool Device::run()
 {
     if (!m_transport->open())
     {
-        std::cout << "error opening com";
-        return;
+        return false;
     }
 
     m_transport->send(DeviceCommand::Packets::Config::Init);
@@ -82,11 +94,12 @@ void Device::run()
         );
     }
 
+    m_running = true;
     m_thread = std::thread([this, footages]()
         {               
             uint8_t pack[6];
             pack[5] = 197;
-            while (true)
+            while (m_running)
             {
                 for (const Image& footage : footages)
                 {
@@ -105,9 +118,10 @@ void Device::run()
                     m_transport->send(std::vector<uint8_t>(pack, pack + 6));
                     m_transport->send(footage.data);
 
-                    Sleep(700);
+                    Sleep(642);
                 }
             }
         });
 
+    return true;
 }

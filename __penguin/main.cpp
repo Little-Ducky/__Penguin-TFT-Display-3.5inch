@@ -11,11 +11,20 @@
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR lpCmdLine, int nCmdShow)
 {
+	HANDLE hMutex = CreateMutexW(nullptr, TRUE, L"Global\\PenguinDisplayApp");
+
+	if (GetLastError() == ERROR_ALREADY_EXISTS)
+	{
+		MessageBox(nullptr, L"Penguin is dancing", L"Hey!!!", MB_OK);
+		CloseHandle(hMutex);
+		return 0;
+	}
+
 	Application app;
 
 	if (!app.init(hInstance))
 	{
-		return 1;
+		return 0;
 	}
 
 	if (!ImageLoader::instance()->init())
@@ -39,14 +48,17 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR lpCmdLin
 
 	if (it == devices.end())
 	{
-		MessageBox(nullptr, L"screen not found", L"Error", MB_OK | MB_ICONERROR);
+		MessageBox(nullptr, L"screen not found", L":( no penguin", MB_OK | MB_ICONERROR);
 
 		return 0;
 	}
 
 	Device device(std::make_unique<Transport>(it->path));
 
-	device.run();
+	if (!device.run())
+	{
+		return 0;
+	}
 
 	MSG msg;
 
@@ -56,5 +68,6 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR lpCmdLin
 		DispatchMessage(&msg);
 	}
 
+	CloseHandle(hMutex);
 	return 0;
 }

@@ -30,8 +30,29 @@ bool Transport::open()
 
 	if (m_hSeries == INVALID_HANDLE_VALUE)
 	{
-		MessageBox(nullptr, L"INVALID_HANDLE_VALUE", L"Error", MB_ICONERROR);
-		
+		DWORD err = GetLastError();
+
+		wchar_t* msg = nullptr;
+
+		FormatMessageW(
+			FORMAT_MESSAGE_ALLOCATE_BUFFER |
+			FORMAT_MESSAGE_FROM_SYSTEM |
+			FORMAT_MESSAGE_IGNORE_INSERTS,
+			nullptr,
+			err,
+			0,
+			(LPWSTR)&msg,
+			0,
+			nullptr
+		);
+
+		wchar_t buffer[512];
+		wsprintf(buffer, L"Error opening COM port.\nCode: %lu\n\n%s", err, msg);
+
+		MessageBoxW(nullptr, buffer, L":(", MB_ICONERROR);
+
+		LocalFree(msg);
+
 		return false;
 	}
 

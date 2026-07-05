@@ -36,7 +36,7 @@ LRESULT CALLBACK Application::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM
             GetCursorPos(&pt);
 
             HMENU hMenu = CreatePopupMenu();
-            AppendMenu(hMenu, MF_STRING, 1, L"Закрыть");
+            AppendMenu(hMenu, MF_STRING, 1, L"Bye-bye Penguin :(");
 
             SetForegroundWindow(hwnd);
 
@@ -61,6 +61,7 @@ LRESULT CALLBACK Application::WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM
         if (LOWORD(wParam) == 1)
         {
             DestroyWindow(hwnd);
+            PostQuitMessage(0);
         }
         break;
     }
@@ -119,7 +120,10 @@ bool Application::init(HINSTANCE hInstance)
 
     wcscpy_s(m_nid.szTip, L"__Penguin!");
 
-    Shell_NotifyIcon(NIM_ADD, &m_nid);
-
+    if (!Shell_NotifyIcon(NIM_ADD, &m_nid))
+    {
+        MessageBox(nullptr, L"Failed to add tray icon", L"Error", MB_ICONERROR);
+        return false;
+    }
     return true;
 }

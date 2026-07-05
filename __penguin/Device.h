@@ -17,10 +17,11 @@ class Device
 {
 public:
 	Device(std::unique_ptr<Transport> transport);
+	~Device();
 
 	void setOrientaion(Orientation orientation);
 
-	void run();
+	bool run();
 
 private:
 	std::unique_ptr<Transport> m_transport;
@@ -29,5 +30,7 @@ private:
 	Orientation m_orientation;
 
 	std::thread m_thread;
+
+	std::atomic<bool> m_running;
 };
 

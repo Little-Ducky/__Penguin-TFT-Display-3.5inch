@@ -8,6 +8,7 @@ class Application
 {
 public:
     bool init(HINSTANCE hInstance);
+
     ~Application();
 
 private:
