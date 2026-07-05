@@ -22,5 +22,5 @@ It allows you to:
 
 ## 🎥 Demo
 
-<img width="696" height="890" alt="penguin_example" src="https://github.com/user-attachments/assets/612fd7ab-ab2a-470a-a882-e1f226d406b1" />
+<img width="255" height="455" alt="penguin_example" src="https://github.com/user-attachments/assets/612fd7ab-ab2a-470a-a882-e1f226d406b1" />
 
