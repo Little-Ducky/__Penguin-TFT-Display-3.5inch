@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="__penguin/__penguin.vcxproj" Id="296c3ea1-8dd5-4018-9715-19a55741091b" />
+</Solution>

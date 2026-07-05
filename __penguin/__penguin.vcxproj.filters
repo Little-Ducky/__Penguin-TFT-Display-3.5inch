@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Device">
+      <UniqueIdentifier>{66fa72aa-5652-41a8-9cde-e1a652f2216c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Device\Protocol">
+      <UniqueIdentifier>{96b5a991-9c34-4ce1-8d3f-cf23b4f1c610}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scanner">
+      <UniqueIdentifier>{066a090e-ab4e-4816-80b7-9f6ed286546f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Domain">
+      <UniqueIdentifier>{53387a82-fcc2-4be1-879b-481d844d6e6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Transport">
+      <UniqueIdentifier>{948aa8b7-5d30-499c-84ff-fdef3ad0a1be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ImageLoader">
+      <UniqueIdentifier>{ecc9a123-0dad-47c8-b144-180aeb91ffbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application">
+      <UniqueIdentifier>{43459ff3-656c-47d2-9a97-b7efb6d93271}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Scanner.cpp">
+      <Filter>Source Files\Scanner</Filter>
+    </ClCompile>
+    <ClCompile Include="Transport.cpp">
+      <Filter>Source Files\Transport</Filter>
+    </ClCompile>
+    <ClCompile Include="Device.cpp">
+      <Filter>Source Files\Device</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageLoader.cpp">
+      <Filter>Source Files\ImageLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>Application</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DevicePackets.h">
+      <Filter>Source Files\Device\Protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="Scanner.h">
+      <Filter>Source Files\Scanner</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceInfo.h">
+      <Filter>Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="Transport.h">
+      <Filter>Source Files\Transport</Filter>
+    </ClInclude>
+    <ClInclude Include="Device.h">
+      <Filter>Source Files\Device</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageLoader.h">
+      <Filter>Source Files\ImageLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Resolution.h">
+      <Filter>Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="Orientation.h">
+      <Filter>Domain</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="img\f1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\f2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\f3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\f4.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\f5.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\f6.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\background.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\background_blue.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="img\icon.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+  </ItemGroup>
+</Project>

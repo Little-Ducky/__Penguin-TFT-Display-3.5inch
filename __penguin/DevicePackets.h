@@ -1,0 +1,101 @@
+#pragma once
+#pragma once
+#include <cstdint>
+#include <vector>
+
+namespace DeviceCommand::Packets
+{
+    using Byte = uint8_t;
+
+    namespace Cmd
+    {
+        inline const std::vector<Byte> TurnOn =
+        {
+            0x00, 0x00, 0x00, 0x00, 0x00, 0x6D
+        };
+
+        inline const std::vector<Byte> TurnOff =
+        {
+            0x00, 0x00, 0x00, 0x00, 0x00, 0x6C
+        };
+
+        inline const std::vector<Byte> SetBrightness =
+        {
+            0x00, 0x00, 0x00, 0x6E
+        };
+    }
+
+    namespace Config
+    {
+        inline const std::vector<Byte> Init =
+        {
+            0x00, 0x00, 0x00, 0x00, 0x00, 0xFF
+        };
+
+        inline const std::vector<Byte> EnterDisplayMode =
+        {
+            0x00, 0x00, 0x00, 0x00, 0x00,
+            0x7A,
+            0x00, 0x00, 0x00, 0x00,
+            0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+        };
+    }
+
+    namespace Mode
+    {
+        inline const std::vector<Byte> Vertical =
+        {
+            0x00, 0x00, 0x04, 0xFD, 0xDF, 0xC5
+        };
+
+        inline const std::vector<Byte> Horizontal =
+        {
+            0x00, 0x00, 0x07, 0x7D, 0x3F, 0xC5
+        };
+    }
+
+    namespace Show
+    {
+        inline const std::vector<Byte> VerticalDefault =
+        {
+            0x00, 0x00, 0x00, 0x00, 0x00,
+            0x79, 0x64,
+            0x01, 0x40,
+            0x01, 0xE0,
+            0x00, 0x00, 0x00, 0x00, 0x00
+        };
+
+        inline const std::vector<Byte> VerticalMirrored =
+        {
+            0x00, 0x00, 0x00, 0x00, 0x00,
+            0x79, 0x65,
+            0x01, 0x40,
+            0x01, 0xE0,
+            0x00, 0x00, 0x00, 0x00, 0x00
+        };
+
+        inline const std::vector<Byte> HorizontalDefault =
+        {
+            0x00, 0x00, 0x00, 0x00, 0x00,
+            0x79, 0x67,
+            0x01, 0xE0,
+            0x01, 0x40,
+            0x00, 0x00, 0x00, 0x00, 0x00
+        };
+
+        inline const std::vector<Byte> HorizontalMirrored =
+        {
+            0x00, 0x00, 0x00, 0x00, 0x00,
+            0x79, 0x66,
+            0x01, 0xE0,
+            0x01, 0x40,
+            0x00, 0x00, 0x00, 0x00, 0x00
+        };
+    }
+
+    namespace Brightness
+    {
+        constexpr uint16_t Max = 0x0000; // 100%
+        constexpr uint16_t Min = 0x3FC0; // it means 0 Brightness 
+    }
+}

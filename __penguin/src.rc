@@ -1,0 +1,81 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+/////////////////////////////////////////////////////////////////////////////
+// Ukrainian (Ukraine) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_UKR)
+LANGUAGE LANG_UKRAINIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+IDB_PNG3                PNG                     "img\\f1.png"
+
+IDB_PNG4                PNG                     "img\\f2.png"
+
+IDB_PNG5                PNG                     "img\\f3.png"
+
+IDB_PNG6                PNG                     "img\\f4.png"
+
+IDB_PNG7                PNG                     "img\\f5.png"
+
+IDB_PNG8                PNG                     "img\\f6.png"
+
+IDB_PNG1                PNG                     "img\\background.png"
+
+IDB_PNG2                PNG                     "img\\background_blue.png"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_APP_ICON            ICON                    "img\\icon.ico"
+
+#endif    // Ukrainian (Ukraine) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
