@@ -10,7 +10,7 @@ This project demonstrates how to control an embedded display device, send raw fr
 
 ## ✨ Overview
 
-**__Penguin** is a lightweight C/C++ application that communicates with a TFT screen through a custom protocol.
+**__Penguin** is a lightweight C/C++ winapi application that communicates with a TFT screen through a custom protocol.
 
 It allows you to:
 - Initialize and configure the display
